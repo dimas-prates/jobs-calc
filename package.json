@@ -1,0 +1,20 @@
+{
+  "name": "jobs-calc",
+  "version": "1.0.0",
+  "description": "Project to practice concepts and technologies from Rocketseat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimas-prates/jobs-calc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimas-prates/jobs-calc/issues"
+  },
+  "homepage": "https://github.com/dimas-prates/jobs-calc#readme"
+}
