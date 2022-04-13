@@ -3,7 +3,9 @@ const server = express()
 
 //request, response
 server.get("/", (request, response) => {
-    return response.send('Hello WWWorld');
+    //return response.send('Hello WWWorld');
+    //console.log(__dirname + "/views/index.html")
+    return response.sendFile(__dirname + "/views/index.html")
 })
 
 server.listen(3000, () => {
