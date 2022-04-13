@@ -1,6 +1,9 @@
 const express = require('express');
 const server = express()
 
+//enabling static files
+server.use(express.static("public"))
+
 //request, response
 server.get("/", (request, response) => {
     //return response.send('Hello WWWorld');
