@@ -10,7 +10,6 @@ server.set('view engine', 'ejs')
 //enabling static files
 server.use(express.static("public"))
 
-
 //routes 
 server.use(routes)
 
