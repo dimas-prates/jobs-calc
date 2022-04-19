@@ -21,10 +21,10 @@ routes.get('/profile', (req,res) => res.sendFile(basePath + "/profile.html"))
 
 //EJS can read views when its locate in the root, need to adjust when is in "src"
 const views = __dirname + "/views/"
-routes.get('/', (req,res) => res.render(views +"index"))
-routes.get('/job', (req,res) => res.render(views +"job"))
-routes.get('/job/edit', (req,res) => res.render(views +"job-edit"))
-routes.get('/profile', (req,res) => res.render(views +"profile"))
+routes.get('/', (req, res) => res.render(views + "index"))
+routes.get('/job', (req, res) => res.render(views + "job"))
+routes.get('/job/edit', (req, res) => res.render(views + "job-edit"))
+routes.get('/profile', (req, res) => res.render(views + "profile"))
 
 //Manually redirecting to a html page/file
 //routes.get('/index.html', (req,res) => {return res.redirect('/') })
