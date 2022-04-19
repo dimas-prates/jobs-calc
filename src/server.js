@@ -4,6 +4,9 @@ const server = express()
 //importing routes from routes.js
 const routes = require("./routes")
 
+//setting EJS
+server.set('view engine', 'ejs')
+
 //enabling static files
 server.use(express.static("public"))
 
