@@ -23,7 +23,7 @@ routes.get('/profile', (req,res) => res.sendFile(basePath + "/profile.html"))
 const views = __dirname + "/views/"
 routes.get('/', (req,res) => res.render(views +"index"))
 routes.get('/job', (req,res) => res.render(views +"job"))
-routes.get('/job/edit', (req,res) => res.render(views +"jog-edit"))
+routes.get('/job/edit', (req,res) => res.render(views +"job-edit"))
 routes.get('/profile', (req,res) => res.render(views +"profile"))
 
 //Manually redirecting to a html page/file
