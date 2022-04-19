@@ -4,7 +4,7 @@ const server = express()
 //importing routes from routes.js
 const routes = require("./routes")
 
-//setting EJS
+//setting EJS the template engine
 server.set('view engine', 'ejs')
 
 //enabling static files
