@@ -11,7 +11,7 @@ server.set('view engine', 'ejs')
 server.use(express.static("public"))
 
 //enabling the express to receive/use the req.body
-server.use(express.urlencoded({extende: true}))
+server.use(express.urlencoded({ extende: true }))
 
 //routes 
 server.use(routes)
