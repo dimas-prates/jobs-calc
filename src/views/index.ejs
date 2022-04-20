@@ -83,18 +83,26 @@
               <%= job.id %>
             </div>
             <div class="name column">
-              <%= job.name %> 
+              <%= job.name %>
             </div>
             <div class="deadline column">
               <span>Prazo</span>
-              <p><%= job.remaining %> dias para a entrega </p>
+              <p>
+                <% if(job.status==='progress' ){%>
+                  <%= job.remaining %> dias para a entrega
+
+                    <%} else{%>
+                      Prazo encerrado
+                      <%} %>
+              </p>
             </div>
             <div class="amount column">
               <span>Valor</span>
-              <p>R$ <%= job.budget.toFixed(2).replace('.',',') %> </p>
+              <p>R$ <%= job.budget.toFixed(2).replace('.',',') %>
+              </p>
             </div>
             <div class="status badge column">
-              <%= job.status === 'done' ? 'Encerrado' : 'Em andamento' %> 
+              <%= job.status==='done' ? 'Encerrado' : 'Em andamento' %>
             </div>
             <div class="actions column flex">
               <p class="sr-only">Ações</p>
