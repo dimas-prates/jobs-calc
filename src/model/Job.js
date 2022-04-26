@@ -23,6 +23,6 @@ module.exports = {
         data = newJob;
     },
     delete(jobId){
-        data = data.filter(job => Number(data.id) !== Number(jobId))
+        data = data.filter(job => Number(job.id) !== Number(jobId))
     }
 }
