@@ -29,7 +29,10 @@ const ProfileController = require('./controllers/ProfileController')
 //importing job controler (reallocated from here to there)
 const JobController = require('./controllers/JobController')
 
-routes.get('/', JobController.index)
+//importing Bashboard (index)
+const DashboardController = require('./controllers/DashboardController')
+
+routes.get('/', DashboardController.index)
 routes.get('/job', JobController.create)
 routes.post('/job', JobController.save)
 //routes.get('/job/edit', Job.controllers.show)
