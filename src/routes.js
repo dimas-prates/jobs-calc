@@ -26,18 +26,7 @@ routes.get('/profile', (req,res) => res.sendFile(basePath + "/profile.html"))
 //importing profile controller which it was reallocated to another file (controllers/ProfileController.js)
 const ProfileController = require('./controllers/ProfileController')
 
-//data to fill fields
-const Profile = {
-    data: {
-        name: "Mayk",
-        avatar: "https://github.com/maykbrito.png",
-        "monthly-budget": 3000,
-        "days-per-week": 5,
-        "hours-per-day": 5,
-        "vacation-per-year": 4,
-        "hour-value": 75
-    },
-}
+
 
 const Job = {
     data: [
