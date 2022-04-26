@@ -20,7 +20,10 @@ routes.get('/profile', (req,res) => res.sendFile(basePath + "/profile.html"))
 */
 
 //EJS can read views when its locate in the root, need to adjust when is in "src"
-const views = __dirname + "/views/"
+//commented cause refactoring + deleted all "views" reference in this document
+//const views = __dirname + "/views/"
+
+
 
 //data to fill fields
 const Profile = {
@@ -35,7 +38,7 @@ const Profile = {
     },
     controllers: {
         index(req, res) {
-            return res.render(views + "profile", { profile: Profile.data })
+            return res.render("profile", { profile: Profile.data })
         },
         update(req, res) {
             //req.body to have data
@@ -101,10 +104,10 @@ const Job = {
                     budget: Job.services.calculateBudget(job, Profile.data["hour-value"])
                 }
             })
-            return res.render(views + "index", { jobs: updatedJobs })
+            return res.render("index", { jobs: updatedJobs })
         },
         create(req, res) {
-            return res.render(views + "job")
+            return res.render("job")
         },
         save(req, res) {
             //console.log("save data")
@@ -130,7 +133,7 @@ const Job = {
 
             job.budget = Job.services.calculateBudget(job, Profile.data["hour-value"])
 
-            return res.render(views + "job-edit", { job })
+            return res.render("job-edit", { job })
         },
         update(req, res) {
             const jobId = req.params.jobId
