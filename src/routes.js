@@ -23,7 +23,8 @@ routes.get('/profile', (req,res) => res.sendFile(basePath + "/profile.html"))
 //commented cause refactoring + deleted all "views" reference in this document
 //const views = __dirname + "/views/"
 
-
+//importing profile controller which it was reallocated to another file (controllers/ProfileController.js)
+const ProfileController = require('./controllers/ProfileController')
 
 //data to fill fields
 const Profile = {
@@ -36,38 +37,6 @@ const Profile = {
         "vacation-per-year": 4,
         "hour-value": 75
     },
-    controllers: {
-        index(req, res) {
-            return res.render("profile", { profile: Profile.data })
-        },
-        update(req, res) {
-            //req.body to have data
-            const data = req.body
-
-            //define weeks per year: 52
-            const weeksPerYear = 52
-
-            //remove vacation weeks per year
-            //how much hours per week working
-            const weeksPerMonth = (weeksPerYear - data["vacation-per-year"]) / 12
-
-            //total work hours monthly
-            const weekTotalHours = data["hours-per-day"] * data["days-per-week"]
-
-            //hours per month
-            const monthlyTotalHours = weekTotalHours * weeksPerMonth
-
-            //hour value
-            const hourValue = data["monthly-budget"] / monthlyTotalHours
-
-            Profile.data = {
-                ...Profile.data,
-                ...req.body,
-                "hour-value": hourValue
-            }
-            return res.redirect('/profile')
-        }
-    }
 }
 
 const Job = {
@@ -194,8 +163,10 @@ routes.post('/job', Job.controllers.save)
 routes.get('/job/:jobId', Job.controllers.show)
 routes.post('/job/:jobId', Job.controllers.update)
 routes.post('/job/delete/:jobId', Job.controllers.delete)
-routes.get('/profile', Profile.controllers.index)
-routes.post('/profile', Profile.controllers.update)
+//routes.get('/profile', Profile.controllers.index)
+//routes.post('/profile', Profile.controllers.update)
+routes.get('/profile', ProfileController.index)
+routes.post('/profile', ProfileController.update)
 
 //Manually redirecting to a html page/file
 //routes.get('/index.html', (req,res) => {return res.redirect('/') })
