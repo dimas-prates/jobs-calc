@@ -12,10 +12,10 @@ let data = {
 }
 
 module.exports = {
-    get(){
+    get() {
         return data;
     },
-    update(newData){
+    update(newData) {
         data = newData;
     }
 }

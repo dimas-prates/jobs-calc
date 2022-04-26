@@ -16,13 +16,13 @@ let data = [
 ]
 
 module.exports = {
-    get(){
+    get() {
         return data
     },
-    update (newJob) {
+    update(newJob) {
         data = newJob;
     },
-    delete(jobId){
+    delete(jobId) {
         data = data.filter(job => Number(job.id) !== Number(jobId))
     }
 }
