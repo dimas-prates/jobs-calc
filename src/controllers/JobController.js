@@ -40,27 +40,27 @@ module.exports = {
     },
     async update(req, res) {
         const jobId = req.params.jobId
-        const jobs = await Job.get();
+        // const jobs = await Job.get();
 
-        const job = jobs.find(job => Number(job.id) === Number(jobId))
-        if (!job) {
-            return res.send('Job not found')
-        }
+        // const job = jobs.find(job => Number(job.id) === Number(jobId))
+        // if (!job) {
+        //     return res.send('Job not found')
+        // }
 
         const updatedJob = {
-            ...job,
+            // ...job,
             name: req.body.name,
             "total-hours": req.body["total-hours"],
             "daily-hours": req.body["daily-hours"],
         }
-        const newJobs = jobs.map(job => {
-            if (Number(job.id) === Number(jobId)) {
-                job = updatedJob
-            }
-            return job
-        })
+        // const newJobs = jobs.map(job => {
+        //     if (Number(job.id) === Number(jobId)) {
+        //         job = updatedJob
+        //     }
+        //     return job
+        // })
 
-        Job.update(newJobs)
+        await Job.update(updatedJob, jobId)
         res.redirect('/job/' + jobId)
     },
     delete(req, res) {
