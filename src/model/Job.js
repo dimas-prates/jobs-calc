@@ -36,11 +36,24 @@ module.exports = {
             //}
         }));
     },
-    update(newJob) {
-        data = newJob;
+    async update(updatedJob, jobId) {
+        // data = newJob;
+        const db = await Database()
+        await db.run(`UPDATE jobs SET
+        name = "${updatedJob.name}",
+        daily_hours = ${updatedJob["daily-hours"]},
+        total_hours = ${updatedJob["total-hours"]}
+        WHERE id = ${jobId}
+        `)
+        await db.close()
     },
-    delete(jobId) {
-        data = data.filter(job => Number(job.id) !== Number(jobId))
+    async delete(jobId) {
+        // data = data.filter(job => Number(job.id) !== Number(jobId))
+        const db = await Database();
+         
+        await db.run(`DELETE FROM jobs WHERE id = ${jobId}`)
+
+        await db.close()
     },
     async create(newJob) {
         //data.push(newJob)
