@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3')
-//importing only the function/property "open"
 //const sqlite = require('sqlite')
+//importing only the function/property "open"
 const { open } = require('sqlite')
 
 //Opening the conection to the db
