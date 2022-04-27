@@ -4,7 +4,8 @@
   "description": "Project to practice concepts and technologies from Rocketseat",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "init-db":"node src/db/init.js"
   },
   "repository": {
     "type": "git",
